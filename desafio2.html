@@ -1,0 +1,407 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio2</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #121214;
+            color: #fff;
+        }
+
+        header {
+            background: #1a1a1e;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            color: #ea580c;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #f59e0b;
+        }
+
+        .hero {
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            padding: 60px 8%;
+            background:
+            linear-gradient(90deg, rgba(0,0,0,.9), rgba(0,0,0,.3)),
+            url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1600&q=85');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 550px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #ea580c;
+        }
+
+        .hero p {
+            color: #ddd;
+            font-size: 17px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ea580c;
+            color: white;
+            padding: 14px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: .3s;
+        }
+
+        .btn:hover {
+            background: #f59e0b;
+            transform: translateY(-3px);
+        }
+
+        .produtos {
+            padding: 70px 8%;
+            text-align: center;
+        }
+
+        .titulo {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .titulo span {
+            color: #ea580c;
+        }
+
+        .subtitulo {
+            color: #aaa;
+            margin-bottom: 40px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: #1a1a1e;
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: left;
+            transition: .3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+        }
+
+        .card-info {
+            padding: 20px;
+        }
+
+        .card h3 {
+            color: #f59e0b;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #bbb;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .preco {
+            display: block;
+            color: #ea580c;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .galeria {
+            padding: 60px 8%;
+            background: #1a1a1e;
+            text-align: center;
+        }
+
+        .fotos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 35px;
+        }
+
+        .fotos img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: .3s;
+        }
+
+        .fotos img:hover {
+            transform: scale(1.03);
+        }
+
+        .localizacao {
+            padding: 70px 8%;
+            text-align: center;
+        }
+
+        .localizacao p {
+            color: #ccc;
+            margin: 15px 0;
+            line-height: 1.7;
+        }
+
+        .horario {
+            margin: 25px auto;
+            background: #1a1a1e;
+            padding: 25px;
+            max-width: 400px;
+            border-radius: 8px;
+        }
+
+        .horario h3 {
+            color: #f59e0b;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            background: #1a1a1e;
+            text-align: center;
+            padding: 30px 15px;
+            color: #aaa;
+        }
+
+        footer h2 {
+            color: #ea580c;
+            margin-bottom: 12px;
+        }
+
+        footer a {
+            color: #f59e0b;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer p {
+            margin-top: 20px;
+            font-size: 13px;
+        }
+
+        @media (max-width: 650px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            nav a {
+                margin: 0;
+                font-size: 13px;
+            }
+
+            .hero {
+                min-height: 430px;
+                padding: 40px 7%;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">🔥BRASA NOBRE</div>
+
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#cardapio">Cardápio</a>
+            <a href="#galeria">Galeria</a>
+            <a href="#localizacao">Onde estamos</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>O sabor que vem direto da <span>brasa!</span></h1>
+
+            <p>
+                Hambúrguer artesanal, carne suculenta, queijo derretendo
+                e aquele toque defumado que faz toda a diferença.
+                Aqui, cada mordida tem história!
+            </p>
+
+            <a href="https://wa.me/5531999999999"
+               class="btn" target="_blank">
+                🍔Pedir pelo WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <section class="produtos" id="cardapio">
+
+        <h2 class="titulo">Nossos <span>queridinhos</span></h2>
+        <p class="subtitulo">
+            Feitos na brasa, preparados com carinho e muito sabor.
+        </p>
+
+        <div class="cards">
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600" alt="Hambúrguer artesanal">
+                <div class="card-info">
+                    <h3>Smokehouse</h3>
+                    <p>Pão brioche, hambúrguer artesanal, queijo cheddar,
+                    alface, tomate e molho especial da casa.</p>
+                    <span class="preco">R$42,00</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433a?w=600" alt="Hambúrguer com bacon">
+                <div class="card-info">
+                    <h3>Smash Bacon</h3>
+                    <p>Carne na brasa, bacon crocante, cheddar cremoso
+                    e maionese defumada.</p>
+                    <span class="preco">R$ 38,00</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=600" alt="Hambúrguer especial">
+                <div class="card-info">
+                    <h3>Truffle Gorgon</h3>
+                    <p>Dois blends artesanais, queijo, cebola caramelizada
+                    e molho barbecue especial.</p>
+                    <span class="preco">R$44,00</span>
+                </div>
+            </div>
+
+        </div>
+
+        <br><br>
+
+        <a href="https://wa.me/5531999999999"
+           class="btn" target="_blank">
+            Quero pedir o meu!
+        </a>
+
+    </section>
+
+    <section class="galeria" id="galeria">
+
+        <h2 class="titulo">Um pouco do nosso <span>mundo</span></h2>
+
+        <p class="subtitulo">
+            Cuidado em cada detalhe, do fogo até a sua mesa.
+        </p>
+
+        <div class="fotos">
+            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=600" alt="Hambúrguer artesanal">
+            <img src="https://images.unsplash.com/photo-1561758033-d89a9ad46330?w=600" alt="Hambúrguer com queijo">
+            <img src="https://images.unsplash.com/photo-1550317138-10000687a72b?w=600" alt="Hambúrguer com batatas">
+            <img src="https://images.unsplash.com/photo-1520072959219-c595dc870360?w=600" alt="Hambúrguer na brasa">
+        </div>
+
+    </section>
+
+    <section class="localizacao" id="localizacao">
+
+        <h2 class="titulo">Vem pra <span>Brasa Nobre!</span></h2>
+
+        <p>
+            Seja para matar aquela fome ou curtir um hambúrguer
+            com a galera, estamos esperando por você!
+        </p>
+
+        <p>📍Bairro Principal, Rua Exemplo, 123 - Centro</p>
+        <p>📍Juiz de Fora - MG</p>
+
+        <div class="horario">
+            <h3>🕒 Nosso horário</h3>
+            <p>Terça a Domingo</p>
+            <p>18h às 23h</p>
+            <p>Segunda-feira: fechado</p>
+        </div>
+
+        <a href="https://wa.me/5531999999999"
+           class="btn" target="_blank">
+            Fale com a gente
+        </a>
+
+    </section>
+
+    <footer>
+
+        <h2>🔥 BRASA NOBRE</h2>
+
+        <p>Hamburgueria Artesanal & Smokehouse</p>
+
+        <br>
+
+        <a href="https://wa.me/5531999999999" target="_blank">WhatsApp</a>
+
+        <p>© 2026 Brasa Nobre - Todos os direitos reservados.</p>
+
+        <p>Feito com ❤️ e muito sabor!</p>
+
+    </footer>
+
+</body>
+</html>

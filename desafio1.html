@@ -1,0 +1,449 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Desafio1</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f8fafc;
+    color: #334155;
+}
+
+header {
+    background: white;
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px #00000010;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0284c7;
+}
+
+.logo span {
+    color: #dc2626;
+}
+
+nav a {
+    text-decoration: none;
+    color: #475569;
+    margin-left: 22px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #0284c7;
+}
+
+.hero {
+    min-height: 480px;
+    padding: 80px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+    background: #e0f2fe;
+}
+
+.hero-text {
+    max-width: 520px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    color: #075985;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.hero img {
+    width: 43%;
+    max-width: 460px;
+    height: 330px;
+    object-fit: cover;
+    border-radius: 25px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 23px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+    background: #25D366;
+    font-weight: bold;
+    margin: 5px;
+}
+
+.btn-blue {
+    background: #0284c7;
+}
+
+.alerta {
+    background: #dc2626;
+    color: white;
+    padding: 13px;
+    text-align: center;
+    font-weight: bold;
+}
+
+section {
+    padding: 65px 8%;
+}
+
+.titulo {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.titulo h2 {
+    color: #075985;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.titulo p {
+    color: #64748b;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 3px 12px #00000009;
+}
+
+.card h3 {
+    color: #0284c7;
+    margin: 15px 0;
+}
+
+.card p {
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.card .emoji {
+    font-size: 38px;
+}
+
+.equipe {
+    background: #f1f5f9;
+}
+
+.medico img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.medico h3 {
+    margin-top: 15px;
+}
+
+.medico p {
+    color: #64748b;
+    margin-top: 8px;
+}
+
+.sobre {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.sobre img {
+    width: 45%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+.sobre-texto {
+    line-height: 1.8;
+}
+
+.localizacao {
+    text-align: center;
+    background: #e0f2fe;
+}
+
+.localizacao p {
+    margin: 12px 0;
+}
+
+footer {
+    background: #0f172a;
+    color: white;
+    padding: 35px 8%;
+    text-align: center;
+    line-height: 2;
+}
+
+footer a {
+    color: #7dd3fc;
+    text-decoration: none;
+}
+
+.whatsapp {
+    position: fixed;
+    bottom: 22px;
+    right: 22px;
+    background: #25D366;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 3px 10px #0003;
+    z-index: 200;
+}
+
+@media(max-width: 750px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 7px;
+        display: inline-block;
+    }
+
+    .hero, .sobre {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero img, .sobre img {
+        width: 100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🐾PetCare <span>24h</span></div>
+
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#equipe">Nossa equipe</a>
+        <a href="#sobre">Sobre nós</a>
+        <a href="#contato">Contato</a>
+    </nav>
+</header>
+
+<div class="alerta">
+    🚨 ATENDIMENTO VETERINÁRIO 24 HORAS
+    | Estamos aqui para cuidar do seu melhor amigo!
+</div>
+
+<section class="hero" id="inicio">
+    <div class="hero-text">
+        <h1>Quem ama, cuida. Nós cuidamos com carinho! 🐶</h1>
+
+        <p>Hospital Veterinário & Centro Diagnóstico Saúde Animal / Serviços Locais</p>
+
+        <p>
+            No PetCare 24h, seu pet recebe atenção, carinho
+            e cuidados veterinários de qualidade.
+            Estamos preparados para cuidar dele em todos
+            os momentos, inclusive nas emergências.
+        </p>
+
+        <a href="https://wa.me/5531999999999"
+           class="btn">💚 Agendar consulta</a>
+
+        <a href="#servicos" class="btn btn-blue">
+            Conheça nossos serviços
+        </a>
+    </div>
+
+    <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=900"
+         alt="Cachorro feliz">
+</section>
+
+<section id="servicos">
+    <div class="titulo">
+        <h2>Nossos serviços</h2>
+        <p>Tudo o que seu companheiro precisa em um só lugar.</p>
+    </div>
+
+    <div class="cards">
+        <div class="card">
+            <div class="emoji">🩺</div>
+            <h3>Consultas veterinárias</h3>
+            <p>Acompanhamento da saúde, avaliações e orientações para seu pet.</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🚑</div>
+            <h3>Emergência 24h</h3>
+            <p>Atendimento veterinário para situações de urgência e emergência.</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🔬</div>
+            <h3>Centro diagnóstico</h3>
+            <p>Exames laboratoriais e apoio diagnóstico para cuidar melhor.</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">💉</div>
+            <h3>Vacinação</h3>
+            <p>Proteção e prevenção para uma vida mais saudável.</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🐱</div>
+            <h3>Internação</h3>
+            <p>Monitoramento e cuidados durante a recuperação do seu animal.</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">❤️</div>
+            <h3>Cirurgias</h3>
+            <p>Procedimentos veterinários com acompanhamento profissional.</p>
+        </div>
+    </div>
+</section>
+
+<section class="equipe" id="equipe">
+    <div class="titulo">
+        <h2>Quem cuida do seu melhor amigo?</h2>
+        <p>Uma equipe que trabalha com amor, dedicação e responsabilidade.</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card medico">
+            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600"
+                 alt="Médica veterinária">
+            <h3>Dra. Mariana Oliveira</h3>
+            <p>Clínica Geral</p>
+            <p>CRM-Vet: 00001</p>
+        </div>
+
+        <div class="card medico">
+            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600"
+                 alt="Médico veterinário">
+            <h3>Dr. Gabriel Santos</h3>
+            <p>Cirurgia Veterinária</p>
+            <p>CRM-Vet: 00002</p>
+        </div>
+
+        <div class="card medico">
+            <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=600"
+                 alt="Médica veterinária">
+            <h3>Dra. Camila Ferreira</h3>
+            <p>Diagnóstico Veterinário</p>
+            <p>CRM-Vet: 00003</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="sobre">
+    <div class="sobre">
+        <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=900"
+             alt="Cachorro correndo">
+
+        <div class="sobre-texto">
+            <h2 style="color:#0284c7; margin-bottom:15px;">
+                Mais que um hospital, uma família!
+            </h2>
+
+            <p>
+                Sabemos que seu pet não é apenas um animal,
+                ele faz parte da sua família.
+            </p>
+
+            <p>
+                Por isso, nossa missão é oferecer atendimento
+                humanizado, acolhimento aos tutores e cuidado
+                responsável aos nossos pacientes.
+            </p>
+
+            <p>
+                Aqui, cada patinha importa e cada vida merece
+                atenção especial. 🐾
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="localizacao" id="contato">
+    <div class="titulo">
+        <h2>Venha nos conhecer!</h2>
+        <p>Estamos prontos para receber você e seu companheiro.</p>
+    </div>
+
+    <p>📍Bairro Exemplo,Rua Principal,123 - Centro</p>
+    <p>📍 Belo Horizonte - MG</p>
+    <p>📞 (32) 98812-3456</p>
+    <p>🕒 Atendimento: 24 horas, todos os dias</p>
+
+    <a href="https://wa.me/5531999999999"
+       class="btn">💚Fale conosco pelo WhatsApp</a>
+</section>
+
+<footer>
+    <h2>🐾 PetCare 24h</h2>
+    <p>Amor, cuidado e saúde para quem faz parte da sua família.</p>
+
+    <p>
+        <a href="#inicio">Início</a> |
+        <a href="#servicos">Serviços</a> |
+        <a href="#equipe">Equipe</a> |
+        <a href="#contato">Contato</a>
+    </p>
+
+    <p>© 2026 PetCare 24h - Todos os direitos reservados.</p>
+</footer>
+
+<a class="whatsapp"
+   href="https://wa.me/5531999999999"
+   target="_blank">
+   💬 WhatsApp
+</a>
+
+</body>
+</html>
